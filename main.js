@@ -1,6 +1,6 @@
 var canvas = new fabric.Canvas('myCanvas');
-player_x = 10;
-player_y = 10;
+player_x = 50;
+player_y = 50;
 block_image_width = 30;
 block_image_height = 30;
 
@@ -33,4 +33,91 @@ function new_image(get_image){
         });
         canvas.add(block_image_object);
     });
+}
+
+window.addEventListener("keydown", my_keydown);
+
+function my_keydown(e){
+    keyPressed = e.keyCode;
+    console.log(keyPressed);
+    if(e.shiftKey == true && keyPressed == '80'){
+        console.log("p + shift press together");
+        block_image_width = block_image_width + 10;
+        block_image_height = block_image_height + 10;
+        document.getElementById("current_width").innerHTML = block_image_width;
+        document.getElementById("current_height").innerHTML = block_image_height;
+    }
+
+    if(e.shiftKey == true && keyPressed == '77'){
+        console.log("m + shift press together");
+        block_image_width = block_image_width - 10;
+        block_image_height = block_image_height - 10;
+        document.getElementById("current_width").innerHTML = block_image_width;
+        document.getElementById("current_height").innerHTML = block_image_height;
+    }
+
+if(keyPressed == '87'){
+    up();
+    console.log("up");
+}
+ 
+if(keyPressed == '83'){
+    down();
+    console.log("down");
+}
+
+if(keyPressed == '65'){
+    left();
+    console.log("left");
+}
+
+if(keyPressed == '68'){
+    right();
+    console.log("right");
+}
+
+if(keyPressed == '50'){
+    new_image('wall.jpg');
+    console.log("2");
+}
+
+if(keyPressed == '49'){
+    new_image('roof.jpg');
+    console.log("1");
+}
+
+if(keyPressed == '51'){
+    new_image('unique.png');
+    console.log("3");
+}
+
+if(keyPressed == '52'){
+    new_image('light_green.png');
+    console.log("4");
+}
+
+if(keyPressed == '53'){
+    new_image('dark_green.png');
+    console.log("5");
+}
+
+if(keyPressed == '54'){
+    new_image('trunk.jpg');
+    console.log("6");
+}
+
+if(keyPressed == '55'){
+    new_image('yellow_wall.png');
+    console.log("7");
+}
+
+if(keyPressed == '56'){
+    new_image('ground.png');
+    console.log("8");
+}
+
+if(keyPressed == '57'){
+    new_image('cloud.jpg');
+    console.log("9");
+}
 }
