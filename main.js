@@ -56,22 +56,22 @@ function my_keydown(e){
         document.getElementById("current_height").innerHTML = block_image_height;
     }
 
-if(keyPressed == '87'){
+if(keyPressed == '87'|| keyPressed == '38'){
     up();
     console.log("up");
 }
  
-if(keyPressed == '83'){
+if(keyPressed == '83'|| keyPressed == '40'){
     down();
     console.log("down");
 }
 
-if(keyPressed == '65'){
+if(keyPressed == '65'|| keyPressed == '37'){
     left();
     console.log("left");
 }
 
-if(keyPressed == '68'){
+if(keyPressed == '68'|| keyPressed == '39'){
     right();
     console.log("right");
 }
@@ -121,3 +121,43 @@ if(keyPressed == '57'){
     console.log("9");
 }
 }
+
+function up(){
+if(player_y >= 0){
+    player_y = player_y - block_image_height;
+    console.log("block_image_height = " + block_image_height);
+    console.log("when up arrow key is pressed, X = " + player_x + ", Y = " + player_y);
+    canvas.remove(player_object);
+    player_update();
+}
+}
+
+function down(){
+    if(player_y <= 500){
+        player_y = player_y + block_image_height;
+        console.log("block_image_height = " + block_image_height);
+        console.log("when up arrow key is pressed, X = " + player_x + ", Y = " + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+    }
+
+    function left(){
+        if(player_x >= 0){
+            player_x = player_x - block_image_height;
+            console.log("block_image_height = " + block_image_height);
+            console.log("when up arrow key is pressed, X = " + player_x + ", Y = " + player_y);
+            canvas.remove(player_object);
+            player_update();
+        }
+        }
+
+        function right(){
+            if(player_x <= 850){
+                player_x = player_x + block_image_height;
+                console.log("block_image_height = " + block_image_height);
+                console.log("when up arrow key is pressed, X = " + player_x + ", Y = " + player_y);
+                canvas.remove(player_object);
+                player_update();
+            }
+            }
